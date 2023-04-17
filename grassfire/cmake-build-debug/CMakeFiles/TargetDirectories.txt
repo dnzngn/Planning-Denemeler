@@ -1,0 +1,3 @@
+/home/deniz/github/CLionProjects/Planning-Denemeler/grassfire/cmake-build-debug/CMakeFiles/grassfire.dir
+/home/deniz/github/CLionProjects/Planning-Denemeler/grassfire/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/deniz/github/CLionProjects/Planning-Denemeler/grassfire/cmake-build-debug/CMakeFiles/rebuild_cache.dir

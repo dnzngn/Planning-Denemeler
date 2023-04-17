@@ -1,9 +1,10 @@
 //
-// Created by dnz on 03.04.2023.
+// Created by deniz on 17.04.2023.
 //
 
-#ifndef DENEMELER_DIJKSTRA_H
-#define DENEMELER_DIJKSTRA_H
+#ifndef DIJKSTRA_DIJKSTRA_H
+#define DIJKSTRA_DIJKSTRA_H
+
 
 #include <iostream>
 #include <vector>
@@ -37,4 +38,4 @@ void dijkstra(vector<pair<int, int>> adj[], int dist[], int src) {
     }
 }
 
-#endif //DENEMELER_DIJKSTRA_H
+#endif //DIJKSTRA_DIJKSTRA_H
