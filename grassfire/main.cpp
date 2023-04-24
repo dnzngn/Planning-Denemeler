@@ -1,47 +1,8 @@
 #include <iostream>
 #include <vector>
-#include <queue>
-#include <cmath>
+#include "grassfire.h"
 
 using namespace std;
-
-// Grassfire algoritması
-vector<vector<double>> grassfire(vector<Point>& points) {
-    // En küçük öncelikli kuyruk (priority_queue) tanımla
-    priority_queue<Distance> q;
-    // Mesafe grafiği matrisi oluştur
-    vector<vector<double>> distances(points.size(), vector<double>(points.size(), -1));
-
-    // Tüm noktaları gez
-    for (int i = 0; i < points.size(); i++) {
-        // Başlangıç noktasını al
-        Point start = points[i];
-        // Başlangıç noktasına olan mesafe 0'dır
-        distances[i][i] = 0;
-        // Diğer tüm noktalara olan mesafeleri hesapla
-        for (int j = 0; j < points.size(); j++) {
-            if (i == j) {
-                continue;
-            }
-            Point end = points[j];
-            double distance = sqrt(pow((end.x - start.x), 2) + pow((end.y - start.y), 2));
-            // Mesafe değerlerini öncelikli kuyruğa ekle
-            q.push(Distance(end, distance));
-        }
-        // Öncelikli kuyruktan mesafe değerlerini al ve mesafe grafiği matrisine ekle
-        while (!q.empty()) {
-            Point p = q.top().point;
-            double d = q.top().distance;
-            q.pop();
-            if (distances[i][p.x] == -1) {
-                distances[i][p.x] = d;
-                distances[p.x][i] = d;
-            }
-        }
-    }
-    // Mesafe grafiği matrisini döndür
-    return distances;
-}
 
 int main() {
     // Noktaları tanımla
@@ -57,3 +18,30 @@ int main() {
     }
     return 0;
 }
+
+//template<typename T>
+//void Print(T vec)
+//{
+//    auto begs = begin(vec);
+//    auto ends = end(vec);
+//
+//    while (begs != ends){
+//        std::cout << *begs++<<" ";
+//    }
+//    std::cout<<"\n------------------------------------------------------------------\n";
+//}
+//
+//
+//int main(){
+//
+//    std::vector<std::vector<double>> a(5,std::vector<double>(5,-1));
+//
+//    for (int i = 0; i < a.size(); ++i) {
+//        for (int j = 0; j < a[i].size(); ++j) {
+//            std::cout << a[i][j] << " ";
+//        }
+//        std::cout << std::endl;
+//    }
+//
+//    return 0;
+//}
