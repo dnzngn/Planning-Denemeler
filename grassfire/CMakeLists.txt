@@ -3,4 +3,4 @@ project(grassfire)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(grassfire main.cpp grassfire.cpp grassfire.h)
+add_executable(grassfire main.cpp grassfire.h)

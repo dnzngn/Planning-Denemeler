@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "grassfire"
+			"path" : "A_Star"
 		}
 	],
 	"backtrace" : 1,
@@ -53,11 +53,11 @@
 			"sourceIndexes" : 
 			[
 				0,
-				1
+				2
 			]
 		}
 	],
-	"id" : "grassfire::@6890427a1f51a3e7e1df",
+	"id" : "A_Star::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -73,8 +73,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "grassfire",
-	"nameOnDisk" : "grassfire",
+	"name" : "A_Star",
+	"nameOnDisk" : "A_Star",
 	"paths" : 
 	{
 		"build" : ".",
@@ -87,14 +87,14 @@
 			"sourceIndexes" : 
 			[
 				0,
-				1
+				2
 			]
 		},
 		{
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				2
+				1
 			]
 		}
 	],
@@ -108,14 +108,14 @@
 		},
 		{
 			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "grassfire.cpp",
-			"sourceGroupIndex" : 0
+			"path" : "aStar.hpp",
+			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
-			"path" : "grassfire.h",
-			"sourceGroupIndex" : 1
+			"compileGroupIndex" : 0,
+			"path" : "aStar.cpp",
+			"sourceGroupIndex" : 0
 		}
 	],
 	"type" : "EXECUTABLE"

@@ -2,6 +2,42 @@
 	"entries" : 
 	[
 		{
+			"name" : "A_Star_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/deniz/github/CLionProjects/Planning-Denemeler/A_Star/cmake-build-debug"
+		},
+		{
+			"name" : "A_Star_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "A_Star_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/deniz/github/CLionProjects/Planning-Denemeler/A_Star"
+		},
+		{
 			"name" : "CMAKE_ADDR2LINE",
 			"properties" : 
 			[
@@ -55,7 +91,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/deniz/github/CLionProjects/Planning-Denemeler/grassfire/cmake-build-debug"
+			"value" : "/home/deniz/github/CLionProjects/Planning-Denemeler/A_Star/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -115,7 +151,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/snap/clion/233/bin/cmake/linux/x64/bin/cmake"
+			"value" : "/snap/clion/235/bin/cmake/linux/x64/bin/cmake"
 		},
 		{
 			"name" : "CMAKE_CPACK_COMMAND",
@@ -127,7 +163,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/snap/clion/233/bin/cmake/linux/x64/bin/cpack"
+			"value" : "/snap/clion/235/bin/cmake/linux/x64/bin/cpack"
 		},
 		{
 			"name" : "CMAKE_CTEST_COMMAND",
@@ -139,7 +175,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/snap/clion/233/bin/cmake/linux/x64/bin/ctest"
+			"value" : "/snap/clion/235/bin/cmake/linux/x64/bin/ctest"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER",
@@ -543,7 +579,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/deniz/github/CLionProjects/Planning-Denemeler/grassfire/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "/home/deniz/github/CLionProjects/Planning-Denemeler/A_Star/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -603,7 +639,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/deniz/github/CLionProjects/Planning-Denemeler/grassfire"
+			"value" : "/home/deniz/github/CLionProjects/Planning-Denemeler/A_Star"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -655,7 +691,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "/snap/clion/233/bin/ninja/linux/x64/ninja"
+			"value" : "/snap/clion/235/bin/ninja/linux/x64/ninja"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",
@@ -843,7 +879,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "grassfire"
+			"value" : "A_Star"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -887,7 +923,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/snap/clion/233/bin/cmake/linux/x64/share/cmake-3.25"
+			"value" : "/snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",
@@ -1136,42 +1172,6 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "TRUE"
-		},
-		{
-			"name" : "grassfire_BINARY_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "/home/deniz/github/CLionProjects/Planning-Denemeler/grassfire/cmake-build-debug"
-		},
-		{
-			"name" : "grassfire_IS_TOP_LEVEL",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "ON"
-		},
-		{
-			"name" : "grassfire_SOURCE_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "/home/deniz/github/CLionProjects/Planning-Denemeler/grassfire"
 		}
 	],
 	"kind" : "cache",

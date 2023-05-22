@@ -38,13 +38,12 @@ void printVector2D(const std::vector<std::vector<double>>& vec)
     std::cout << "----------------------------------------------------------------------------------------\n";
 }
 
-
 std::vector<std::vector<double>> grassfire(std::vector<Point>& points) {
     // En küçük öncelikli kuyruk (priority_queue) tanımla
     std::priority_queue<Distance> q; // {((x0,y0),dist0),((x1,y1),dist1),((x2,y2),dist2),((x3,y3),dist3)}
     // Mesafe grafiği matrisi oluştur
     std::vector<std::vector<double>> distances(points.size(), std::vector<double>(points.size(), -1));
-                                        // distances(4,vector<double> dvec = {-1,-1,-1,-1})
+    // distances(4,vector<double> dvec = {-1,-1,-1,-1})
     // Tüm noktaları gez
     for (int i = 0; i < points.size(); i++) {
         // Başlangıç noktasını al
@@ -60,8 +59,8 @@ std::vector<std::vector<double>> grassfire(std::vector<Point>& points) {
             double distance = sqrt(pow((end.x - start.x), 2) + pow((end.y - start.y), 2)); // Noktalar arası mesafe hesaplanıyor.
             // Mesafe değerlerini öncelikli kuyruğa ekle
             q.emplace(end, distance);// {((3,0),115),((3,1),12),((3,2),11),((2,1),3),((2,0),22),((1,0),51),...} == normalde böyle q listesini oluşturması lazım
-                                            // fakat priority_queue listesi olarak oluşturuludğu için büyükten küçüğe sıralanmış şekilde çıkar.
-                                            // {((3,0),115),((1,0),51),((2,0),22),((3,1),12),...} ---> sadece mesafeleri karşılaştırarak sıralıyor
+            // fakat priority_queue listesi olarak oluşturuludğu için büyükten küçüğe sıralanmış şekilde çıkar.
+            // {((3,0),115),((1,0),51),((2,0),22),((3,1),12),...} ---> sadece mesafeleri karşılaştırarak sıralıyor
         }
         // Öncelikli kuyruktan mesafe değerlerini al ve mesafe grafiği matrisine ekle
         while (!q.empty()) {
@@ -70,7 +69,7 @@ std::vector<std::vector<double>> grassfire(std::vector<Point>& points) {
             double d = q.top().distance; // Bu listedeki en büyük distance'ı bul ==> (115)
             q.pop(); // En büyük distance'a sahip point çıkartılıyor ==> {((1,0),51),((2,0),22),((3,1),12),...}
             if (distances[i][p.x] == -1) { // distances(4,vector<double> dvec = {-1,-1,-1,-1})
-                distances[i][p.x] = d; // 1.Adım: distances[0][3] = 115, 2.Adım: distances[0][]
+                distances[i][p.x] = d; // 1.Adım: distances[0][3] = 115, 2.Adım: distances[0][2]
                 distances[p.x][i] = d; // 1.Adım: distances[3][0] = 115, 2.Adım: distances[][0]
                 printVector2D(distances);
             }
