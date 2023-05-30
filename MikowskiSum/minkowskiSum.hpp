@@ -10,37 +10,58 @@
 #include <algorithm>
 
 
-struct Nokta {
+struct Point {
     double x, y;
+    Point(double _x, double _y) : x(_x), y(_y) {}
 
-    Nokta(double _x, double _y) : x(_x), y(_y) {}
-};
-
-// İki poligonun Minkowski toplamını hesaplayan fonksiyon
-std::vector<Nokta> minkowskiToplam(const std::vector<Nokta>& poligon1, const std::vector<Nokta>& poligon2) {
-    std::vector<Nokta> sonuc;
-
-    // İki poligonun her bir noktası için toplamı hesapla
-    for (const auto& nokta1 : poligon1) {
-        for (const auto& nokta2 : poligon2) {
-            sonuc.emplace_back(nokta1.x + nokta2.x, nokta1.y + nokta2.y); // x ve y düzleminde topla
-        }
+    Point operator + (const Point& p) const {
+        return Point{x + p.x, y + p.y};
+    }
+    Point operator - (const Point& p) const {
+        return Point{x - p.x, y - p.y};
+    }
+    [[nodiscard]] double cross(const Point& p) const {
+        return x * p.y - y * p.x;
     }
 
-    // Yinelemeleri kaldır
+};
 
-    // 1. Adım: Noktaları sırala
-    std::sort(sonuc.begin(), sonuc.end(), [](const Nokta& nokta1, const Nokta& nokta2) {
-        return (nokta1.x < nokta2.x) || (nokta1.x == nokta2.x && nokta1.y < nokta2.y);
-    });
+void reorder_polygon(std::vector<Point>& P){
+    size_t pos = 0;
+    for(size_t i = 1; i < P.size(); i++){
+        if(P[i].y < P[pos].y || (P[i].y == P[pos].y && P[i].x < P[pos].x))
+            pos = i;
+    }
 
-    // 2. Adım: Ardışık yinelemeleri kaldır
-    sonuc.erase(std::unique(sonuc.begin(), sonuc.end(), [](const Nokta& nokta1, const Nokta& nokta2) {
-        return (nokta1.x == nokta2.x) && (nokta1.y == nokta2.y);
-    }), sonuc.end());
+    rotate(P.begin(), P.begin() + pos, P.end());
+}
 
-    // Sonucu döndür
-    return sonuc;
+// İki poligonun Minkowski toplamını hesaplayan fonksiyon
+std::vector<Point> minkowskiSum(std::vector<Point>& poly1, std::vector<Point>& poly2) {
+
+    std::vector<Point> result;
+
+    // Büyükten küçüğe sıralama yapılıyor
+    reorder_polygon(poly1);
+    reorder_polygon(poly2);
+
+    // İlk iki değeri dolduruduğumuza emin oluyoruz.
+    poly1.emplace_back(poly1[0]);
+    poly1.emplace_back(poly1[1]);
+    
+    poly2.emplace_back(poly2[0]);
+    poly2.emplace_back(poly2[1]);
+
+    size_t i = 0, j = 0;
+    while(i < poly1.size() - 2 || j < poly2.size() - 2){
+        result.emplace_back(poly1[i] + poly2[j]);
+        auto cross = (poly1[i + 1] - poly1[i]).cross(poly2[j + 1] - poly2[j]);
+        if(cross >= 0)
+            ++i;
+        if(cross <= 0)
+            ++j;
+    }
+    return result;
 }
 
 #endif //MINKOWSKISUM_MINKOWSKISUM_HPP
