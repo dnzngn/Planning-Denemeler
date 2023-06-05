@@ -125,8 +125,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/home/deniz/github/CLionProjects/Planning-Denemeler/A_Star/cmake-build-debug",
-		"source" : "/home/deniz/github/CLionProjects/Planning-Denemeler/A_Star"
+		"build" : "/home/deniz/github/CLionProjects/Planning-Denemeler/grassfire/cmake-build-debug",
+		"source" : "/home/deniz/github/CLionProjects/Planning-Denemeler/grassfire"
 	},
 	"version" : 
 	{
