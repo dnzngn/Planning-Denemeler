@@ -1,46 +1,9 @@
 // C++ program to find groups of unknown
-// Points using K nearest neighbour algorithm.
-#include <bits/stdc++.h>
-#include <string>
+
+#include "KNN.hpp"
+#include <iostream>
 
 using namespace std;
-
-struct Point
-{
-    string val;	 // Group of point
-    double x{}, y{};	 // Co-ordinate of point
-    double distance{}; // Distance from test point
-};
-
-
-// This function finds classification of point p using k nearest neighbour algorithm. It assumes only two
-// groups and returns  if p belongs to group Black, else White (belongs to group 1).
-
-string classifyAPoint(Point arr[], int n, int k, const Point& p)
-{
-    // Fill distances of all points from p
-    for (int i = 0; i < n; i++)
-        arr[i].distance = sqrt((arr[i].x - p.x) * (arr[i].x - p.x) + (arr[i].y - p.y) * (arr[i].y - p.y));
-
-    // Sort the Points by distance from p, Used to sort an array of points by increasing order of distance
-    sort(arr, arr+n, [](Point& p1, Point& p2){return p1.distance < p2.distance;});
-
-    // Now consider the first k elements and only two groups
-
-    string val1{"Black"},val2{"White"};
-    int freq1 = 0;	 // Frequency of group 0
-    int freq2 = 0;	 // Frequency of group 1
-
-    for (int i = 0; i < k; i++)
-    {
-        if (arr[i].val == val1)
-            freq1++;
-        else if (arr[i].val == val2)
-            freq2++;
-    }
-
-    return (freq1 > freq2 ? val1 : val2);
-}
 
 // Driver code
 int main()
