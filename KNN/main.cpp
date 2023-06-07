@@ -8,8 +8,8 @@ using namespace std;
 struct Point
 {
     string val;	 // Group of point
-    double x, y;	 // Co-ordinate of point
-    double distance; // Distance from test point
+    double x{}, y{};	 // Co-ordinate of point
+    double distance{}; // Distance from test point
 };
 
 
